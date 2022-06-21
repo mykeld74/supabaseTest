@@ -10,7 +10,7 @@
 	const handleSignUp = async () => {
 		try {
 			loading = true;
-			const { user, error } = await supabase.auth.signIn({ provider: 'google' });
+			const { user, error } = await supabase.auth.signIn({ provider: 'github' });
 			if (error) throw error;
 			console.log('user', user);
 		} catch (error) {
@@ -35,7 +35,7 @@
 			<input
 				type="submit"
 				class="button block"
-				value={loading ? 'Loading' : 'Sign in with Google'}
+				value={loading ? 'Loading' : 'Sign in with Github'}
 				disabled={loading}
 			/>
 		</div>
